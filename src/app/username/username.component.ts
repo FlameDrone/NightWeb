@@ -7,9 +7,11 @@ import { Component, OnInit, Input} from '@angular/core';
   ]
 })
 export class UsernameComponent implements OnInit {
-   name;
+   name:any = "";
   constructor() {
+    while(this.name == "" || this.name == null){
     this.name = prompt('Whats your name?')
+    }
    }
 
   ngOnInit(): void {

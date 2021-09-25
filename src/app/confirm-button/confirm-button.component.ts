@@ -15,9 +15,12 @@ export class ConfirmButtonComponent{
 
   confirm(){
       var message:string = MessageComponent.get_Input();
-      var reg = /^[0-9a-zA-Z]+/;
-      if(reg.test(message)){
-        console.log(message);
+      if(message.replace(" ", "").replace("\n","").replace("\r","").replace(/\r\n|\r|\n/g, "") != ""){
+        var bool: boolean = confirm("Are you sure you want to send this message?");
+        if(bool){
+          console.log(message);
+          MessageComponent.set_Input("");
+        }
       }
   }
 }

@@ -18,4 +18,9 @@ export class MessageComponent{
     this.text = (<HTMLInputElement>document.getElementById("input")).value;
     return this.text;
   }
+
+  static set_Input(pValue:string){
+    (<HTMLInputElement>document.getElementById("input")).value = pValue;
+    this.text = (<HTMLInputElement>document.getElementById("input")).value;
+  }
 }
